@@ -1,6 +1,6 @@
 FROM denoland/deno:1.13.2
 
-EXPOSE 8443 
+EXPOSE 8443
 WORKDIR /app
 USER deno
 
@@ -21,3 +21,4 @@ ADD . .
 RUN deno cache main.ts
 
 CMD ["run", "--allow-net", "--allow-read", "--unstable", "main.ts"]
+
