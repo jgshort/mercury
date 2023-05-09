@@ -8,6 +8,6 @@
 Local port defaults to `1993`. Run docker to serve:
 
 ```
-$ docker build -t app . && docker run -it --init -p 1993:1993 app
+$ docker build -t app . && docker run -it --init -p 8443:8443 app
 ```
 

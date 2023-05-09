@@ -1,6 +1,6 @@
 import { Application, Router } from "https://deno.land/x/oak@v9.0.0/mod.ts";
 import { config } from "./config/dev.ts";
-import health from "./server/v1/health/index.ts";
+import health from "./server/health/index.ts";
 
 const NotFound = new Response('Not Found', { status: 404 });
 
@@ -29,7 +29,7 @@ app.addEventListener("error", (evt) => {
 
 const router = new Router();
 router
-  .get('/api/v1/config', getConfig);
+  .get('/api/:version/config', getConfig);
 
 app.use(router.routes());
 app.use(router.allowedMethods());
